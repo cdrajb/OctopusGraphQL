@@ -8,6 +8,6 @@ IOG_check_rates.py will check the half-hour periods between specific start and e
 
 octo_account.py uses the Octopus API (not GraphQL) to report your account details
 
-For octo_account.py and IOG_check_rates.py - create a subfolder called include, and in that subfolder create a file called creds.py, with definitions as defined in creds_sample.py
+For octo_account.py and IOG_check_rates.py - create a subfolder called include, and in that subfolder create a file called creds.py, with definitions as in creds_sample.py
 
 
