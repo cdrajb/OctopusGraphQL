@@ -2,17 +2,10 @@
 # read usage and rates 
 import sys
 import requests,json
-from datetime import date, datetime,timezone,timedelta
 from requests.models import HTTPError
-from zoneinfo import ZoneInfo
-import logging
 from include import creds
 
-# modify as needed to use the appropriate logging filepath for your OS
-# and replace the apikey and accountNumber below with your own
-
-#logging.basicConfig(level=logging.INFO,filename="/home/pi/log/IOG_rates.log",filemode="a")
-logging.basicConfig(level=logging.INFO,filename="C:/mydocs~1/personal/House/Octopus/utils/GraphQL/IOG_rates.log",filemode="a")
+# and replace the apikey, accountNumber and propertyId in ./include/creds.py with your own
 
 url = "https://api.octopus.energy/v1/graphql/"
 
@@ -78,11 +71,6 @@ def getTimes():
    object = getObject()
 #   print(object)
    return object['data']['property']['measurements']['edges']
-
-now = datetime.now()
-nowtime=now.strftime('%Y-%m-%d %H:%M:%S')
-logging.info('\n')
-logging.info('Starting IOG_check_rates.py at %s',nowtime)
 
 #Get Token
 authToken = refreshToken(creds.apikey,creds.account_num)
