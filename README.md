@@ -4,7 +4,7 @@ You'll need to edit it with your Octopus account number and api key, and to sele
 (I think I may have based it on code I found elsewhere, so apologies if you recognise it! Let me know and I'll credit you)
 
 IOG_check_rates.py will check the half-hour periods between specific start and end times, and report whether they are to be charged at peak or off-peak rate.
-(Note that it may take a while, sometimes a few days, before the rates are updated)
+(Note that it may take a while, sometimes a few days, before the rates are updated to reflect IOG dispatches)
 
 octo_account.py uses the Octopus API (not GraphQL) to report your account details
 
