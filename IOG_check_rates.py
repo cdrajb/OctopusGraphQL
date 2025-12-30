@@ -5,7 +5,7 @@ import requests,json
 from requests.models import HTTPError
 from include import creds
 
-# and replace the apikey, accountNumber and propertyId in ./include/creds.py with your own
+# and replace the apikey, accountNumber mpan and propertyId in ./include/creds.py with your own
 
 url = "https://api.octopus.energy/v1/graphql/"
 
@@ -16,7 +16,7 @@ endAt="2025-05-08T23:00:00Z"
 utilityFilters= [{
             "electricityFilters": {
                 "readingFrequencyType": "THIRTY_MIN_INTERVAL",
-                "marketSupplyPointId": "2000050660710",
+                "marketSupplyPointId": creds.mpan,
                 "readingDirection": "CONSUMPTION"}}]
 
 def refreshToken(apiKey,accountNumber):
@@ -73,7 +73,7 @@ def getTimes():
    return object['data']['property']['measurements']['edges']
 
 #Get Token
-authToken = refreshToken(creds.apikey,creds.account_num)
+authToken = refreshToken(creds.apikey,creds.AccountNumber)
 times = getTimes()
 
 for item in times:
