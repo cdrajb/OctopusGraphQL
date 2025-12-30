@@ -10,4 +10,4 @@ octo_account.py uses the Octopus API (not GraphQL) to report your account detail
 
 For octo_account.py and IOG_check_rates.py - create a subfolder called include, and in that subfolder create a file called creds.py, with definitions as in creds_sample.py
 
-
+(Note that if you have more than one MPAN for electricity, you may need to modify the code - I don't have an export MPAN so didn't test that)
